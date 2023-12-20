@@ -30,7 +30,7 @@
 
 ## Saving Log Data Web:
 ```sh
-  whatweb -v --log-file=namafile
+  whatweb domain_name -v --log-file=namafile
   ```
 <br>
 <br>
