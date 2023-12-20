@@ -72,12 +72,12 @@
 ## Vulnerability SECTION
 ### Vulnerability Analysis with Nmap (Group Scripts):
  ```sh
-  sudo nmap --script auth ip_address_target -sS (find username & password info)
+  sudo nmap --script auth ip_address_target -sS
   ```
 - Gunakan sudo nmap dengan opsi --script auth untuk mencari informasi username & password pada alamat IP target
 - Gunakan -sS untuk melakukan Syn scan (direkomendasikan)
 ```sh
-  sudo nmap --script malware ip_address_target -sS (check for malware or backdoor)
+  sudo nmap --script malware ip_address_target -sS
   ```
 - Gunakan sudo nmap dengan opsi --script malware untuk memeriksa keberadaan malware atau backdoor pada alamat IP target
 ```sh
@@ -112,23 +112,24 @@
   cd /usr/share/metasploit-framework
   ```
 ### Modules :
-- `exploits` - to exploit targets
-- `nops` - to instruct the processor not to perform any operations, crucial during buffer overflows
-- `payloads` - to control targets
-- `post` - for persistence after exploitation, privilege escalation, and obtaining administrator access
+- `exploits` - untuk mengeksploitasi target
+- `nops` - untuk memberi instruksi kepada prosesor agar tidak melakukan operasi apa pun, penting selama buffer overflows
+- `payloads` - untuk mengontrol target
+- `post` - untuk ketahanan setelah eksploitasi, eskalasi hak privilage, dan memperoleh akses administrator
 <br>
 
-## STEP BY STEP EXPLOITATION
+## STEP BY STEP EXPLOITATION `Metasploit Framework`
+Langkah-langkah ini secara umum mencakup pencarian kelemahan (vulnerabilities) pada sistem target dan eksploitasi kelemahan tersebut menggunakan alat seperti Metasploit Framework. Metode ini umumnya digunakan oleh peneliti keamanan atau profesional keamanan informasi untuk mengidentifikasi dan memperbaiki kelemahan yang mungkin dapat dieksploitasi oleh penyerang. Ini penting dalam memastikan bahwa sistem dan jaringan memiliki tingkat keamanan yang tinggi terhadap potensi ancaman.
 
-1. Find open ports on the target using `portscanner.py`.
-2. To see which exploits can be used to exploit `vsFTPd`, use the command `SEARCHSPLOIT`.
-3. Next, open the `MSFCONSOLE` in `cd /usr/share/metasploit-framework`.
-4. Search for an exploit that can be used to exploit `vsFTPd` using the command `search vsftpd 2.3.3`.
-5. How to use the exploit is to use the command `USE 0` (can use the number in front).
-6. How to find out information about the newly used exploit is to use the command `SHOW INFO`.
-7. If `RHOST` is still empty, we must fill it in.
-8. How to enter `RHOST (IP TARGET)` is to use the command `SET RHOSTS (IP TARGET)`.
-9. To make sure it has been filled or not, use the command `SHOW OPTIONS`.
-10. How to exploit the target machine is to use the command `EXPLOIT` / `RUN`.
-11. To exit, use the command `EXIT`.
+1. Temukan port terbuka pada target menggunakan `portscanner.py`.
+2. Untuk melihat exploit apa yang dapat digunakan untuk mengeksploitasi `vsFTPd`, gunakan perintah `SEARCHSPLOIT`.
+3. Selanjutnya, buka `MSFCONSOLE` di `cd /usr/share/metasploit-framework`.
+4. Cari exploit yang dapat digunakan untuk mengeksploitasi `vsFTPd` menggunakan perintah `search vsftpd 2.3.3`.
+5. Cara menggunakan exploit adalah dengan menggunakan perintah `USE 0` (bisa menggunakan nomor di depan).
+6. Cara mengetahui informasi tentang exploit yang baru digunakan adalah dengan menggunakan perintah `SHOW INFO`.
+7. Jika `RHOST` masih kosong, kita harus mengisinya.
+8. Cara memasukkan `RHOST (IP TARGET)` adalah dengan menggunakan perintah `SET RHOSTS (IP TARGET)`.
+9. Untuk memastikan apakah sudah terisi atau belum, gunakan perintah `SHOW OPTIONS`.
+10. Cara mengeksploitasi mesin target adalah dengan menggunakan perintah `EXPLOIT` / `RUN`.
+11. Untuk keluar, gunakan perintah `EXIT`.
 
