@@ -109,7 +109,7 @@
 ## EXPLOITS SECTION
 ### To view Metasploit location in Linux:
 ```sh
-  - cd /usr/share/metasploit-framework
+  cd /usr/share/metasploit-framework
   ```
 ### Modules :
 - `exploits` - to exploit targets
