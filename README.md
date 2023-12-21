@@ -137,10 +137,20 @@ https://nmap.org/book/nse-usage.html
   ```
 - Gunakan sudo nmap dengan opsi --script auth untuk mencari informasi username & password pada alamat IP target
 - Gunakan -sS untuk melakukan Syn scan (direkomendasikan)
+<img width="974" alt="Screenshot 2023-12-21 at 16 51 13" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/726c79c1-9e3c-4a6d-9888-2de0a56379b9">
+Pada alamat IP 192.168.1.4, Nmap menemukan bahwa kredensial tomcat:tomcat adalah valid dan dapat digunakan untuk mengakses server web Apache Tomcat.
+<br>
+<br>
+  
 ```sh
   sudo nmap --script malware ip_address_target -sS
   ```
 - Gunakan sudo nmap dengan opsi --script malware untuk memeriksa keberadaan malware atau backdoor pada alamat IP target
+<img width="947" alt="Screenshot 2023-12-21 at 16 55 31" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/3bd1b010-cdd3-4f0a-ac25-7261ffcff751">
+<br>
+<br>
+
+
 ```sh
   sudo nmap --script banner ip_address_target -sS
   ```
