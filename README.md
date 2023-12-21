@@ -41,7 +41,10 @@
 
 ## Username Hunter:
 ```sh
-  sherlock (python sherlock.py username)
+cd /Users/naufalazhar/Documents/NAUFAL_AZHAR/HACKING/Hacking_tools/sherlock/sherlock
+  ```
+```sh
+python3 sherlock.py username
   ```
 <br>
 <br>
@@ -49,16 +52,16 @@
 ## NMAP Scanning
 ### IP Range Scan & List Scan:
  ```sh
-  sudo netdiscover -r (ip)
+  sudo netdiscover -r ip_address
   ```
 - Gunakan sudo netdiscover untuk melakukan pemindaian rentang dengan IP yang ditentukan
  ```sh
-nmap -Pn (ip address target)
+nmap -Pn ip_address
   ```
 - Gunakan nmap dengan opsi -Pn untuk melakukan pemindaian daftar pada alamat IP target yang ditentukan
 - Catatan: Gunakan ini jika Windows memblokir permintaan ping
  ```sh
-nmap -iL (nama file)
+nmap -iL file_name
   ```
   - Gunakan nmap dengan opsi -iL untuk melakukan pemindaian pada beberapa IP yang ditentukan dalam file yang diberikan
   - Contoh: nmap -iL targets.txt
