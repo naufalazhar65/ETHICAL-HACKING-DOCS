@@ -32,14 +32,18 @@
 <br>
 <br>
 
-## Email Hunter Methods (SOCIAL ENGINEERING):
+## Email Hunter Methods
 - theHarvester
-- Hunter.io
+```sh
+theHarvester -d domain_name -b all
+  ```
+- [Hunter.io](https://hunter.io/)
+
 
 <br>
 <br>
 
-## Username Hunter:
+## Sherlock (Username Hunter)
 ```sh
 cd /Users/naufalazhar/Documents/NAUFAL_AZHAR/HACKING/Hacking_tools/sherlock/sherlock
   ```
