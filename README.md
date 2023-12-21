@@ -1,11 +1,11 @@
 ## Information Gathering Methods:
 
 ```sh
-  whois
+  whois domain_name
   ```
 - Gunakan whois untuk mendapatkan informasi domain dengan memasukkan nama domain
 ```sh
-  whatweb -v
+  whatweb -v domain_name
   ```
 - Gunakan whatweb dengan opsi -v untuk mendapatkan informasi web secara rinci
 
@@ -68,11 +68,13 @@ nmap ip_address 0/24
 <br>
 
 ### Syn Scan, TCP Connect Scan, UDP Scan:
+- Syn scan
 ```sh
-sudo nmap -sS ip_address_target (Syn scan)
+sudo nmap -sS ip_address_target
   ```
+- TCP connect scan
 ```sh
-sudo nmap -sT ip_address_target (TCP connect scan)
+sudo nmap -sT ip_address_target
   ```
 <br>
 
@@ -86,15 +88,19 @@ sudo nmap -O ip_address_target
 ```sh
 sudo nmap -sV ip_address_target
   ```
+- Lower intensity
 ```sh
-sudo nmap -sV  —version-intensity 2 ip_address_target ( Lower intensity )
+sudo nmap -sV  —version-intensity 2 ip_address_target
   ```
 ```sh
 sudo nmap -sV --version-all ip_address_target
   ```
+- Lower intensity 
 ```sh
-sudo nmap -sV --version-light ip_address_target ( Lower intensity  )
+sudo nmap -sV --version-light ip_address_target
   ```
+<br>
+<br>
 
 ### Aggressive Scan (not recommended, too much noise):
 ```sh
@@ -103,23 +109,29 @@ sudo nmap -A ip_address_target
 <br>
 
 ### Port Specification & Output Handling:
+- select ports
 ```sh
 sudo nmap -sS -p port1,port2,... ip_address_target
   ```
+- all ports
 ```sh
-sudo nmap -sS -p- ip_address_target (all ports)
+sudo nmap -sS -p- ip_address_target
   ```
+- top 100 ports
 ```sh
-sudo nmap -sS -F ip_address_target (top 100 ports)
+sudo nmap -sS -F ip_address_target
   ```
+- save output logs
 ```sh
 sudo nmap -sS -F ip_address_target >> nama_file.txt
   ```
+- save log dan menampilkan output 
 ```sh
-sudo nmap -sS -F -oN nama_file ip_address_target ( save log dan menampilkan output )
+sudo nmap -sS -F -oN nama_file ip_address_target
   ```
+- Lower intensity 
 ```sh
-sudo nmap -sV  —version-intensity 2 ip_address_target ( Lower intensity )
+sudo nmap -sV  —version-intensity 2 ip_address_target
   ```
 
 <br>
