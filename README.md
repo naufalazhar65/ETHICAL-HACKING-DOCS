@@ -145,9 +145,10 @@ sudo nmap -sV  —version-intensity 2 ip_address_target
 <br>
 
 ## Vulnerability SECTION
-### Nmap Script (Group Script)
-https://nmap.org/book/nse-usage.html
+
 ### Vulnerability Analysis with Nmap (Group Scripts):
+[Usage and Examples](https://nmap.org/book/nse-usage.html)
+
  ```sh
   sudo nmap --script auth ip_address_target -sS
   ```
