@@ -56,20 +56,81 @@
   ```
 - Gunakan sudo netdiscover untuk melakukan pemindaian rentang dengan IP yang ditentukan
  ```sh
-  nmap -Pn (ip address target)
+nmap -Pn (ip address target)
   ```
 - Gunakan nmap dengan opsi -Pn untuk melakukan pemindaian daftar pada alamat IP target yang ditentukan
 - Catatan: Gunakan ini jika Windows memblokir permintaan ping
  ```sh
-  nmap -iL (nama file)
+nmap -iL (nama file)
   ```
   - Gunakan nmap dengan opsi -iL untuk melakukan pemindaian pada beberapa IP yang ditentukan dalam file yang diberikan
   - Contoh: nmap -iL targets.txt
+```sh
+nmap ip_address 0/24
+  ```
+<br>
+
+### Syn Scan, TCP Connect Scan, UDP Scan:
+```sh
+sudo nmap -sS ip_address_target (Syn scan)
+  ```
+```sh
+sudo nmap -sT ip_address_target (TCP connect scan)
+  ```
+<br>
+
+### OS Detection Scanning (nmap):
+```sh
+sudo nmap -O ip_address_target
+  ```
+<br>
+
+### Port Service Version Scanning (nmap):
+```sh
+sudo nmap -sV ip_address_target
+  ```
+```sh
+sudo nmap -sV  —version-intensity 2 ip_address_target ( Lower intensity )
+  ```
+```sh
+sudo nmap -sV --version-all ip_address_target
+  ```
+```sh
+sudo nmap -sV --version-light ip_address_target ( Lower intensity  )
+  ```
+
+### Aggressive Scan (not recommended, too much noise):
+```sh
+sudo nmap -A ip_address_target
+  ```
+<br>
+
+### Port Specification & Output Handling:
+```sh
+sudo nmap -sS -p port1,port2,... ip_address_target
+  ```
+```sh
+sudo nmap -sS -p- ip_address_target (all ports)
+  ```
+```sh
+sudo nmap -sS -F ip_address_target (top 100 ports)
+  ```
+```sh
+sudo nmap -sS -F ip_address_target >> nama_file.txt
+  ```
+```sh
+sudo nmap -sS -F -oN nama_file ip_address_target ( save log dan menampilkan output )
+  ```
+```sh
+sudo nmap -sV  —version-intensity 2 ip_address_target ( Lower intensity )
+  ```
 
 <br>
 <br>
 
 ## Vulnerability SECTION
+### Nmap Script (Group Script)
+https://nmap.org/book/nse-usage.html
 ### Vulnerability Analysis with Nmap (Group Scripts):
  ```sh
   sudo nmap --script auth ip_address_target -sS
@@ -89,15 +150,22 @@
 ```sh
   cd /usr/share/nmap/scripts
   ```
-- Access target through anonymous FTP if vulnerable: 
-  ```bash
+- Access target through anonymous FTP if vulnerable:
+
+  ```sh
   sudo nmap --script-help Vulnerability
+  ```
+
+- example :
+  ```sh
+  sudo nmap --script ftp-anon.nse ip_address -sS
+  ```
 
 <br>
 <br>
-
 ## Via NESSUS
 ### Start Nessus
+
 ```sh
   sudo /bin/systemctl start nessusd.service
   ```
@@ -108,6 +176,7 @@
 
 ## EXPLOITS SECTION
 ### To view Metasploit location in Linux:
+
 ```sh
   cd /usr/share/metasploit-framework
   ```
@@ -121,8 +190,8 @@
 ## STEP BY STEP EXPLOITATION `Metasploit Framework`
 Langkah-langkah ini secara umum mencakup pencarian kelemahan (vulnerabilities) pada sistem target dan eksploitasi kelemahan tersebut menggunakan alat seperti Metasploit Framework. Metode ini umumnya digunakan oleh peneliti keamanan atau profesional keamanan informasi untuk mengidentifikasi dan memperbaiki kelemahan yang mungkin dapat dieksploitasi oleh penyerang. Ini penting dalam memastikan bahwa sistem dan jaringan memiliki tingkat keamanan yang tinggi terhadap potensi ancaman.
 
-1. Temukan port terbuka pada target menggunakan `portscanner.py`.
-2. Untuk melihat exploit apa yang dapat digunakan untuk mengeksploitasi `vsFTPd`, gunakan perintah `SEARCHSPLOIT`.
+1. Temukan port terbuka pada target menggunakan nmap `sudo nmap -sV ip_address_target`.
+2. Untuk melihat exploit apa yang dapat digunakan untuk mengeksploitasi `vsFTPd`, gunakan perintah `searchsploit vsftpd 2.3.3`.
 3. Selanjutnya, buka `MSFCONSOLE` di `cd /usr/share/metasploit-framework`.
 4. Cari exploit yang dapat digunakan untuk mengeksploitasi `vsFTPd` menggunakan perintah `search vsftpd 2.3.3`.
 5. Cara menggunakan exploit adalah dengan menggunakan perintah `USE 0` (bisa menggunakan nomor di depan).
