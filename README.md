@@ -1,6 +1,3 @@
-# ETHICAL-HACKING-DOCS
-
-
 ## Information Gathering Methods:
 
 ```sh
