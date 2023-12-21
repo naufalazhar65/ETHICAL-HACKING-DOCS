@@ -135,8 +135,8 @@ https://nmap.org/book/nse-usage.html
  ```sh
   sudo nmap --script auth ip_address_target -sS
   ```
-- Gunakan sudo nmap dengan opsi --script auth untuk mencari informasi username & password pada alamat IP target
-- Gunakan -sS untuk melakukan Syn scan (direkomendasikan)
+- Perintah sudo nmap --script auth ip_address_target -sS digunakan untuk melakukan pemindaian jaringan pada alamat IP tertentu dengan fokus pada deteksi otentikasi dan keamanan. Opsi -sS menunjukkan penggunaan pemindaian TCP SYN (half-open scan), sementara --script auth memaksa Nmap menggunakan skrip khusus untuk mengidentifikasi masalah otentikasi pada sistem target.
+
 <img width="974" alt="Screenshot 2023-12-21 at 16 51 13" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/726c79c1-9e3c-4a6d-9888-2de0a56379b9">
 Pada alamat IP 192.168.1.4, Nmap menemukan bahwa kredensial tomcat:tomcat adalah valid dan dapat digunakan untuk mengakses server web Apache Tomcat.
 <br>
@@ -145,7 +145,7 @@ Pada alamat IP 192.168.1.4, Nmap menemukan bahwa kredensial tomcat:tomcat adalah
 ```sh
   sudo nmap --script malware ip_address_target -sS
   ```
-- Gunakan sudo nmap dengan opsi --script malware untuk memeriksa keberadaan malware atau backdoor pada alamat IP target
+- Perintah sudo nmap --script malware ip_address_target -sS digunakan untuk melakukan pemindaian jaringan pada alamat IP tertentu dengan fokus pada deteksi potensi malware.
 <img width="947" alt="Screenshot 2023-12-21 at 16 55 31" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/3bd1b010-cdd3-4f0a-ac25-7261ffcff751">
 <br>
 <br>
@@ -154,25 +154,30 @@ Pada alamat IP 192.168.1.4, Nmap menemukan bahwa kredensial tomcat:tomcat adalah
 ```sh
   sudo nmap --script banner ip_address_target -sS
   ```
-- Gunakan sudo nmap dengan opsi --script banner untuk mendapatkan informasi banner pada alamat IP target
+- Perintah sudo nmap --script banner ip_address_target -sS digunakan untuk melakukan pemindaian jaringan pada alamat IP tertentu dengan fokus pada deteksi dan pengekspos banner atau informasi servis pada port tertentu.
+<img width="971" alt="Screenshot 2023-12-21 at 17 29 44" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/46786610-5ba4-41b8-9167-b85385e0a745">
+<br>
+<br>
 
 ### Vulnerability Analysis with Nmap (Single Scripts):
 ```sh
   cd /usr/share/nmap/scripts
   ```
-- Access target through anonymous FTP if vulnerable:
 
   ```sh
   sudo nmap --script-help Vulnerability
   ```
-
-- example :
+- Access target through anonymous FTP if vulnerable:
+  
   ```sh
   sudo nmap --script ftp-anon.nse ip_address -sS
   ```
+<img width="537" alt="Screenshot 2023-12-21 at 17 45 17" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/ac186912-f06e-4389-8ab4-ad51ef13d24f">
+
 
 <br>
 <br>
+
 ## Via NESSUS
 ### Start Nessus
 
