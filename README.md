@@ -259,27 +259,27 @@ Langkah-langkah ini secara umum mencakup pencarian kelemahan (vulnerabilities) p
 1. Temukan port terbuka pada target menggunakan nmap `sudo nmap -sV ip_address_target`.
     - sebagai contoh disini saya akan mencoba mengekspolit port 21 yaitu `vsFTPd 2.3.4`
 2. Untuk melihat exploit apa yang dapat digunakan untuk mengeksploitasi `vsFTPd`, gunakan perintah `searchsploit vsftpd 2.3.4`.
-     <img width="450" alt="Screenshot 2023-12-22 at 12 32 05" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/2872fcef-a89c-44f4-8a81-292c6ef67e0f">
+   - <img width="450" alt="Screenshot 2023-12-22 at 12 32 05" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/2872fcef-a89c-44f4-8a81-292c6ef67e0f">
 
 3. Selanjutnya, buka `MSFCONSOLE` untuk membuka Metasploit.
-<img width="450" alt="Screenshot 2023-12-22 at 17 50 47" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/54695667-4e87-4ec2-9974-1ef268c5e864">
+- <img width="450" alt="Screenshot 2023-12-22 at 17 50 47" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/54695667-4e87-4ec2-9974-1ef268c5e864">
 
 4. Cari exploit yang dapat digunakan untuk mengeksploitasi `vsFTPd` menggunakan perintah `search vsftpd 2.3.4`.
-      <img width="450" alt="Screenshot 2023-12-22 at 17 59 37" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/b5ee22e7-a81d-444b-8dd2-865126699078">
+  - <img width="450" alt="Screenshot 2023-12-22 at 17 59 37" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/b5ee22e7-a81d-444b-8dd2-865126699078">
 
 5. Cara menggunakan exploit adalah dengan menggunakan perintah `use 0` (bisa menggunakan nomor di depan).
-      <img width="490" alt="Screenshot 2023-12-22 at 18 06 38" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/9b6ba305-5bb1-4afa-b70c-70d894ab760b">
+   - <img width="490" alt="Screenshot 2023-12-22 at 18 06 38" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/9b6ba305-5bb1-4afa-b70c-70d894ab760b">
 
 6. Cara mengetahui informasi tentang exploit yang baru digunakan adalah dengan menggunakan perintah `show info`.
-      <img width="450" alt="Screenshot 2023-12-22 at 18 09 52" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/58916478-3864-439f-bb11-022735a7dd0e">
+   - <img width="450" alt="Screenshot 2023-12-22 at 18 09 52" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/58916478-3864-439f-bb11-022735a7dd0e">
 
 7. Jika `RHOST` masih kosong, kita harus mengisinya.
 8. Cara memasukkan `RHOST (IP TARGET)` adalah dengan menggunakan perintah `set RHOSTS ip_addres_target`.
-      <img width="450" alt="Screenshot 2023-12-22 at 18 13 54" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/944e24ed-ad09-42fb-81a7-d5d6c4f673f6">
+   - <img width="450" alt="Screenshot 2023-12-22 at 18 13 54" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/944e24ed-ad09-42fb-81a7-d5d6c4f673f6">
 
 9. Untuk memastikan apakah sudah terisi atau belum, gunakan perintah `SHOW OPTIONS`.
 10. Cara mengeksploitasi mesin target adalah dengan menggunakan perintah `EXPLOIT` / `RUN`.
-      <img width="450" alt="Screenshot 2023-12-22 at 18 18 23" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/4e88b2fd-4576-440f-987c-bc7a2ec1323a">
+    - <img width="450" alt="Screenshot 2023-12-22 at 18 18 23" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/4e88b2fd-4576-440f-987c-bc7a2ec1323a">
 
 11. Untuk keluar, gunakan perintah `EXIT`.
 
