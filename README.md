@@ -202,8 +202,9 @@ Pada alamat IP 192.168.1.4, Nmap menemukan bahwa kredensial tomcat:tomcat adalah
 3. Download.
 4. cd (file download directory)
 5. `sudo dpkg -i Nessus-10.6.4-debian10_amd64.deb`
-6. You can start Nessus Scanner by typing `sudo /bin/systemctl start nessusd.service`
-7. Access Nessus: https://kali:8834/
+6. You can `start` Nessus Scanner by typing `sudo /bin/systemctl start nessusd.service`
+7. You can `stop` Nessus Scanner by typing `sudo /bin/systemctl stop nessusd.service`
+8. Access Nessus: https://kali:8834/
 
 
 ### EXAMPLE :
