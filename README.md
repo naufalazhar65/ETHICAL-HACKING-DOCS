@@ -196,12 +196,19 @@ Pada alamat IP 192.168.1.4, Nmap menemukan bahwa kredensial tomcat:tomcat adalah
 <br>
 
 ## Via NESSUS
-### Start Nessus
+### INSTALLATIONS
+1. https://www.tenable.com/downloads/nessus?loginAttempted=true
+2. Select your version
+3. Download.
+4. cd (file download directory)
+5. `sudo dpkg -i Nessus-10.6.4-debian10_amd64.deb`
+6. You can start Nessus Scanner by typing `sudo /bin/systemctl start nessusd.service`
+7. Access Nessus: https://kali:8834/
 
-```sh
-  sudo /bin/systemctl start nessusd.service
-  ```
-- Access Nessus: https://kali:8834/
+
+### EXAMPLE :
+<img width="1400" alt="Screenshot 2023-12-22 at 14 14 49" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/8746ad5d-1e99-4be6-99af-2a36c6524153">
+
 
 <br>
 <br>
@@ -224,6 +231,8 @@ Langkah-langkah ini secara umum mencakup pencarian kelemahan (vulnerabilities) p
 
 1. Temukan port terbuka pada target menggunakan nmap `sudo nmap -sV ip_address_target`.
 2. Untuk melihat exploit apa yang dapat digunakan untuk mengeksploitasi `vsFTPd`, gunakan perintah `searchsploit vsftpd 2.3.3`.
+    <img width="461" alt="Screenshot 2023-12-22 at 12 32 05" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/2872fcef-a89c-44f4-8a81-292c6ef67e0f">
+
 3. Selanjutnya, buka `MSFCONSOLE` di `cd /usr/share/metasploit-framework`.
 4. Cari exploit yang dapat digunakan untuk mengeksploitasi `vsFTPd` menggunakan perintah `search vsftpd 2.3.3`.
 5. Cara menggunakan exploit adalah dengan menggunakan perintah `USE 0` (bisa menggunakan nomor di depan).
