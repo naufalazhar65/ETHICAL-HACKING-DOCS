@@ -197,7 +197,7 @@ Pada alamat IP 192.168.1.4, Nmap menemukan bahwa kredensial tomcat:tomcat adalah
 
 ## Via NESSUS
 ### INSTALLATIONS
-1. https://www.tenable.com/downloads/nessus?loginAttempted=true
+1. [Nessus Download](https://www.tenable.com/downloads/nessus?loginAttempted=true)
 2. Select your version
 3. Download.
 4. cd (file download directory)
@@ -206,7 +206,7 @@ Pada alamat IP 192.168.1.4, Nmap menemukan bahwa kredensial tomcat:tomcat adalah
 7. You can `stop` Nessus Scanner by typing `sudo /bin/systemctl stop nessusd.service`
 8. Access Nessus: https://kali:8834/
 
-
+[Nessus Download](https://www.tenable.com/downloads/nessus?loginAttempted=true)
 ### EXAMPLE :
 <img width="1400" alt="Screenshot 2023-12-22 at 14 14 49" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/8746ad5d-1e99-4be6-99af-2a36c6524153">
 
@@ -214,33 +214,72 @@ Pada alamat IP 192.168.1.4, Nmap menemukan bahwa kredensial tomcat:tomcat adalah
 <br>
 <br>
 
-## EXPLOITS SECTION
+## EXPLOITS SECTION `Metasploit Framework`
 ### To view Metasploit location in Linux:
 
 ```sh
   cd /usr/share/metasploit-framework
   ```
+```sh
+  cd /usr/share/metasploit-framework/modules
+  ```
 ### Modules :
-- `exploits` - untuk mengeksploitasi target
-- `nops` - untuk memberi instruksi kepada prosesor agar tidak melakukan operasi apa pun, penting selama buffer overflows
-- `payloads` - untuk mengontrol target
-- `post` - untuk ketahanan setelah eksploitasi, eskalasi hak privilage, dan memperoleh akses administrator
+- `exploits`
+    - Modul ini digunakan untuk mengeksploitasi kerentanan keamanan pada suatu sistem.
+    - Contoh: `exploit/windows/smb/ms08_067_netapi`
+      
+- `nops`
+    - Nops (No Operations) adalah instruksi atau serangkaian instruksi yang tidak melakukan operasi apapun. Modul ini digunakan untuk memasukkan nops sled di antara payload dan shellcode.
+    - Contoh: `nops/linux/x86/mov`
+      
+- `payloads`
+    - Payload adalah kode yang dieksekusi setelah eksploitasi berhasil. Modul payload menentukan apa yang akan dilakukan setelah keberhasilan eksploitasi.
+    - Contoh: `windows/meterpreter/reverse_tcp`
+      
+- `post`
+    - Modul ini digunakan setelah berhasil melakukan eksploitasi untuk mengekstrak informasi tambahan dari sistem target.
+    - Contoh: `post/windows/gather/enum_logged_on_users`
+
+- `encoders`
+    - Modul ini digunakan untuk mengubah payload sehingga dapat menghindari deteksi oleh perangkat lunak keamanan.
+    - Contoh: `encoder/x86/alpha_mixed`
+- `evasion`
+    - Modul ini membantu dalam menghindari deteksi oleh alat keamanan dan perangkat lunak antivirus.
+    - Contoh: `evasion/windows/disable_defender`
+
+- `auxiliary`
+    - Modul ini memberikan fungsionalitas tambahan yang dapat membantu dalam pengumpulan informasi, pemindaian, atau eksploitasi non-invasif.
+    - Contoh: `auxiliary/scanner/http/http_version`
+
 <br>
 
 ## STEP BY STEP EXPLOITATION `Metasploit Framework`
 Langkah-langkah ini secara umum mencakup pencarian kelemahan (vulnerabilities) pada sistem target dan eksploitasi kelemahan tersebut menggunakan alat seperti Metasploit Framework. Metode ini umumnya digunakan oleh peneliti keamanan atau profesional keamanan informasi untuk mengidentifikasi dan memperbaiki kelemahan yang mungkin dapat dieksploitasi oleh penyerang. Ini penting dalam memastikan bahwa sistem dan jaringan memiliki tingkat keamanan yang tinggi terhadap potensi ancaman.
 
 1. Temukan port terbuka pada target menggunakan nmap `sudo nmap -sV ip_address_target`.
-2. Untuk melihat exploit apa yang dapat digunakan untuk mengeksploitasi `vsFTPd`, gunakan perintah `searchsploit vsftpd 2.3.3`.
-    <img width="461" alt="Screenshot 2023-12-22 at 12 32 05" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/2872fcef-a89c-44f4-8a81-292c6ef67e0f">
+    - sebagai contoh disini saya akan mencoba mengekspolit port 21 yaitu `vsFTPd 2.3.4`
+2. Untuk melihat exploit apa yang dapat digunakan untuk mengeksploitasi `vsFTPd`, gunakan perintah `searchsploit vsftpd 2.3.4`.
+     <img width="450" alt="Screenshot 2023-12-22 at 12 32 05" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/2872fcef-a89c-44f4-8a81-292c6ef67e0f">
 
-3. Selanjutnya, buka `MSFCONSOLE` di `cd /usr/share/metasploit-framework`.
-4. Cari exploit yang dapat digunakan untuk mengeksploitasi `vsFTPd` menggunakan perintah `search vsftpd 2.3.3`.
-5. Cara menggunakan exploit adalah dengan menggunakan perintah `USE 0` (bisa menggunakan nomor di depan).
-6. Cara mengetahui informasi tentang exploit yang baru digunakan adalah dengan menggunakan perintah `SHOW INFO`.
+3. Selanjutnya, buka `MSFCONSOLE` untuk membuka Metasploit.
+<img width="450" alt="Screenshot 2023-12-22 at 17 50 47" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/54695667-4e87-4ec2-9974-1ef268c5e864">
+
+4. Cari exploit yang dapat digunakan untuk mengeksploitasi `vsFTPd` menggunakan perintah `search vsftpd 2.3.4`.
+      <img width="450" alt="Screenshot 2023-12-22 at 17 59 37" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/b5ee22e7-a81d-444b-8dd2-865126699078">
+
+5. Cara menggunakan exploit adalah dengan menggunakan perintah `use 0` (bisa menggunakan nomor di depan).
+      <img width="490" alt="Screenshot 2023-12-22 at 18 06 38" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/9b6ba305-5bb1-4afa-b70c-70d894ab760b">
+
+6. Cara mengetahui informasi tentang exploit yang baru digunakan adalah dengan menggunakan perintah `show info`.
+      <img width="450" alt="Screenshot 2023-12-22 at 18 09 52" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/58916478-3864-439f-bb11-022735a7dd0e">
+
 7. Jika `RHOST` masih kosong, kita harus mengisinya.
-8. Cara memasukkan `RHOST (IP TARGET)` adalah dengan menggunakan perintah `SET RHOSTS (IP TARGET)`.
+8. Cara memasukkan `RHOST (IP TARGET)` adalah dengan menggunakan perintah `set RHOSTS ip_addres_target`.
+      <img width="450" alt="Screenshot 2023-12-22 at 18 13 54" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/944e24ed-ad09-42fb-81a7-d5d6c4f673f6">
+
 9. Untuk memastikan apakah sudah terisi atau belum, gunakan perintah `SHOW OPTIONS`.
 10. Cara mengeksploitasi mesin target adalah dengan menggunakan perintah `EXPLOIT` / `RUN`.
+      <img width="450" alt="Screenshot 2023-12-22 at 18 18 23" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/4e88b2fd-4576-440f-987c-bc7a2ec1323a">
+
 11. Untuk keluar, gunakan perintah `EXIT`.
 
