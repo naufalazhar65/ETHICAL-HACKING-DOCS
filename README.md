@@ -327,7 +327,7 @@ Eksploitasi pada port 23, yang merupakan port standar untuk layanan Telnet, dapa
 <br>
 ================================================================================================
 
-## SSH Bruteforce Attack dengan Crunch & Metasploit
+## SSH `Bruteforce Attack` with Crunch & Metasploit
 
 SSH Bruteforce Attack adalah serangan keamanan yang dilakukan dengan mencoba berbagai kombinasi kata sandi untuk mendapatkan akses tidak sah ke sistem atau perangkat yang menggunakan protokol SSH (Secure Shell). SSH digunakan untuk mengakses dan mengelola perangkat jarak jauh secara aman.
 
@@ -381,7 +381,8 @@ disni saya menggubakan `Crunch` untuk membuat daftar kata yang akan kita gunakan
 
 ## STEP BY STEP EXPLOITATION `VNC SERVER`
 
-- Port 5900 adalah port default yang digunakan oleh Virtual Network Computing (VNC) untuk menyediakan layanan akses jarak jauh. VNC memungkinkan pengguna untuk mengendalikan dan melihat desktop dari jarak jauh. Port 5900 khususnya digunakan untuk protokol VNC versi 3.3. Jika protokol yang digunakan adalah versi lain, port yang digunakan bisa berbeda (misalnya, 5901 untuk VNC versi 3.4).
+Port 5900 adalah port default yang digunakan oleh Virtual Network Computing (VNC) untuk menyediakan layanan akses jarak jauh. VNC memungkinkan pengguna untuk mengendalikan dan melihat desktop dari jarak jauh. Port 5900 khususnya digunakan untuk protokol VNC versi 3.3. Jika protokol yang digunakan adalah versi lain, port yang digunakan bisa berbeda (misalnya, 5901 untuk VNC versi 3.4).
+
 Exploitasi pada port 5900 VNC (Protocol 3.3) dapat terjadi jika ada kerentanan keamanan yang dapat dimanfaatkan oleh penyerang. Beberapa potensi kerentanan atau skenario eksploitasi yang dapat terjadi adalah:
 
   - Kelemahan kata sandi:
@@ -404,7 +405,7 @@ Exploitasi pada port 5900 VNC (Protocol 3.3) dapat terjadi jika ada kerentanan k
 
 ## STEP BY STEP EXPLOITATION `Bind Shell Backdoor` with Netcat
 
-- Port 1524 adalah port yang seringkali dikaitkan dengan "Bindshell." Bindshell adalah jenis backdoor atau pintu belakang yang dapat memberikan akses ke sistem dari jarak jauh tanpa pengetahuan atau izin pemilik sistem. Penyebutan "Bindshell" berasal dari kemampuannya untuk "melekat" atau "bind" pada port tertentu pada sistem yang terinfeksi.
+Port 1524 adalah port yang seringkali dikaitkan dengan "Bindshell." Bindshell adalah jenis backdoor atau pintu belakang yang dapat memberikan akses ke sistem dari jarak jauh tanpa pengetahuan atau izin pemilik sistem. Penyebutan "Bindshell" berasal dari kemampuannya untuk "melekat" atau "bind" pada port tertentu pada sistem yang terinfeksi.
 
 Exploitasi pada port 1524 dengan layanan Bindshell dapat terjadi jika ada keamanan yang rentan atau ada celah yang dapat dimanfaatkan oleh penyerang. Beberapa potensi kerentanan atau skenario eksploitasi yang dapat terjadi melalui Bindshell pada port 1524 termasuk:
 
@@ -426,7 +427,7 @@ Exploitasi pada port 1524 dengan layanan Bindshell dapat terjadi jika ada keaman
 <br>
 ================================================================================================
 
-## STEP BY STEP EXPLOITATION `EternalBlue Attack` (Windows)
+## STEP BY STEP EXPLOITATION `EternalBlue Attack` (Windows) (Metasploit-framework)
 
 EternalBlue adalah sebuah exploit (kode yang memanfaatkan kelemahan di dalam perangkat lunak) yang terkait dengan kerentanan keamanan bernama CVE-2017-0144. Kerentanan ini ada di dalam implementasi protokol Server Message Block (SMB) di sistem operasi Microsoft Windows. SMB digunakan untuk berbagi file dan printer di jaringan, dan kelemahan ini memungkinkan penyerang untuk mengeksekusi kode arbitrer di sistem target tanpa otorisasi.
 
