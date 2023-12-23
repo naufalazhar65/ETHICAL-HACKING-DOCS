@@ -206,7 +206,6 @@ Pada alamat IP 192.168.1.4, Nmap menemukan bahwa kredensial tomcat:tomcat adalah
 7. You can `stop` Nessus Scanner by typing `sudo /bin/systemctl stop nessusd.service`
 8. Access Nessus: https://kali:8834/
 
-[Nessus Download](https://www.tenable.com/downloads/nessus?loginAttempted=true)
 ### EXAMPLE :
 <img width="1400" alt="Screenshot 2023-12-22 at 14 14 49" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/8746ad5d-1e99-4be6-99af-2a36c6524153">
 
