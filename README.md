@@ -377,6 +377,52 @@ disni saya menggubakan `Crunch` untuk membuat daftar kata yang akan kita gunakan
 17. untuk menggunakan session tersebut yaitu gunakan perintah `sessions -i 1`
   - <img width="520" alt="Screenshot 2023-12-23 at 12 37 52" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/79962c33-f21e-4cd8-b83d-df66ebb3546c">
 
+<br>
+================================================================================================
+
+## STEP BY STEP EXPLOITATION `VNC SERVER`
+
+- Port 5900 adalah port default yang digunakan oleh Virtual Network Computing (VNC) untuk menyediakan layanan akses jarak jauh. VNC memungkinkan pengguna untuk mengendalikan dan melihat desktop dari jarak jauh. Port 5900 khususnya digunakan untuk protokol VNC versi 3.3. Jika protokol yang digunakan adalah versi lain, port yang digunakan bisa berbeda (misalnya, 5901 untuk VNC versi 3.4).
+Exploitasi pada port 5900 VNC (Protocol 3.3) dapat terjadi jika ada kerentanan keamanan yang dapat dimanfaatkan oleh penyerang. Beberapa potensi kerentanan atau skenario eksploitasi yang dapat terjadi adalah:
+
+  - Kelemahan kata sandi:
+      - Penggunaan kata sandi yang lemah atau mudah ditebak pada server VNC dapat memudahkan penyerang untuk mendapatkan akses yang tidak sah.
+        
+  - Bruteforce Attack:
+      - Seseorang dapat mencoba untuk menjebol kata sandi VNC dengan melakukan serangan bruteforce pada port 5900, mencoba berbagai kombinasi kata sandi.
+
+1. untuk mengakses `VNC SERVER` ini kita bisa menggunakan perintah:
+  
+      ```sh
+      vncviewer ip_address
+      ```
+2. dan masukan `password`
+   
+    - <img width="773" alt="Screenshot 2023-12-23 at 13 29 44" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/bcf14cb2-966e-4619-b687-f0f37ffcd92f">
+
+<br>
+================================================================================================
+
+## STEP BY STEP EXPLOITATION `Bind Shell Backdoor` with Netcat
+
+- Port 1524 adalah port yang seringkali dikaitkan dengan "Bindshell." Bindshell adalah jenis backdoor atau pintu belakang yang dapat memberikan akses ke sistem dari jarak jauh tanpa pengetahuan atau izin pemilik sistem. Penyebutan "Bindshell" berasal dari kemampuannya untuk "melekat" atau "bind" pada port tertentu pada sistem yang terinfeksi.
+
+Exploitasi pada port 1524 dengan layanan Bindshell dapat terjadi jika ada keamanan yang rentan atau ada celah yang dapat dimanfaatkan oleh penyerang. Beberapa potensi kerentanan atau skenario eksploitasi yang dapat terjadi melalui Bindshell pada port 1524 termasuk:
+
+  - Eksploitasi Kerentanan Sistem Operasi:
+      - Bindshell dapat dimanfaatkan untuk mengeksploitasi kerentanan pada sistem operasi yang dijalankan oleh target. Hal ini dapat melibatkan celah keamanan atau kerentanan tertentu yang dapat memberikan akses ke root atau hak istimewa tinggi lainnya.
+        
+  - Pemasangan Backdoor:
+      - Setelah berhasil dieksploitasi, Bindshell dapat digunakan untuk menginstal backdoor pada sistem target. Backdoor ini kemudian dapat digunakan oleh penyerang untuk memasuki sistem kapan saja tanpa pengetahuan pemilik sistem.
+
+1. untuk mengakses `Bindshell` bisa menggunakan tools yaitu `Netcat`.
+2. gunakan perintah:
+   
+      ```sh
+      netcat (ip_address) (port)
+      ```
+
+  - <img width="461" alt="Screenshot 2023-12-23 at 13 53 56" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/e32f7cb1-8bb6-4eb9-be2c-09bc8a6acd3e">
 
 
 
