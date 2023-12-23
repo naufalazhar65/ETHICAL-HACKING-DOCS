@@ -325,5 +325,33 @@ Eksploitasi pada port 23, yang merupakan port standar untuk layanan Telnet, dapa
 15. Cara memasukkan `RHOST (IP TARGET)` adalah dengan menggunakan perintah `set RHOSTS ip_addres_target`.
 16. Cara mengeksploitasi mesin target adalah dengan menggunakan perintah `EXPLOIT` / `RUN`.
 
+<br>
+================================================================================================
+
+## SSH Bruteforce Attack dengan Crunch & Metasploit
+
+SSH Bruteforce Attack adalah serangan keamanan yang dilakukan dengan mencoba berbagai kombinasi kata sandi untuk mendapatkan akses tidak sah ke sistem atau perangkat yang menggunakan protokol SSH (Secure Shell). SSH digunakan untuk mengakses dan mengelola perangkat jarak jauh secara aman.
+
+Untuk melakukan Bruteforce Attack kita membutuhkan sebuah `shell` yang bisa kita gunakan untuk login yang memiliki username dan password
+  - <img width="598" alt="Screenshot 2023-12-23 at 10 25 08" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/ee54144b-ff08-4b73-903a-52959304c6af">
+disini saya menggunakan `VM metasploitable` untuk mempraktikannya, seperti yang kita lihat pada gambar diatas terdapat vulnerable pada `port 22` yaitu service `SSH` version `openSSH 4.7p1 xxxx`,
+`SSH` ini adalah singkatan dari `SECURE SOCKET SHELL` yang kita gunakan untuk sistem admininistrator, artinya kita bisa login ke komputer menggunakan `username` dan `password` melalui SSH, dan SSH ini juga kita bisa gunakan untuk `Remote Access` kita bisa login dari komputer ke komputer lain.
+
+Sebelum melakukan `Bruteforce Attack`, terlebih dahulu kita perlu membuat sebuah daftar kata yang panjang, dan memiliki kata kombinasi daro A sampai Z, dan untuk melakukan Brutefoce Attack akan memakan waktu yang sangat lama, (tergantung dari spek device yang kita miliki).
+ msid
+disni saya menggubakan `Crunch` untuk membuat daftar kata yang akan kita gunakan untuk Bruteforce Attack.
+<br>
+
+### STEP BY STEP
+
+1. untuk men generate daftar kata mengguakan `Crunch` gunakan perintah `crunch 8 8 msidfna`
+
+
+
+
+
+
+
+
 
 
