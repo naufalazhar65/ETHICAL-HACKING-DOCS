@@ -346,6 +346,9 @@ disni saya menggubakan `Crunch` untuk membuat daftar kata yang akan kita gunakan
 
 1. untuk men generate daftar kata mengguakan `Crunch` gunakan perintah :
    - sebagai contoh disini saya menggunakan daftar kata yang sederhana untuk mempersingkat waktu praktik.
+   - `8 8`: Parameter ini menunjukkan panjang minimum dan maksimum dari kata sandi yang akan dihasilkan. Dalam contoh ini, panjang kata sandi adalah 8 karakter.
+   - `msidfna`: Parameter ini menyediakan karakter yang akan digunakan untuk menghasilkan kata sandi. Dalam hal ini, karakter "msidfna" akan digunakan untuk membuat kombinasi kata sandi.
+   - `-o username.txt`: Parameter ini menentukan bahwa output dari daftar kata sandi yang dihasilkan akan disimpan dalam file bernama "username.txt."
 ```sh
   crunch 8 8 msidfna -o username.txt
   ```
