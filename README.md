@@ -427,7 +427,7 @@ Exploitasi pada port 1524 dengan layanan Bindshell dapat terjadi jika ada keaman
 <br>
 ================================================================================================
 
-## STEP BY STEP EXPLOITATION `EternalBlue Attack` (Windows 7)
+## STEP BY STEP EXPLOITATION `EternalBlue Attack` (Windows)
 
 EternalBlue adalah sebuah exploit (kode yang memanfaatkan kelemahan di dalam perangkat lunak) yang terkait dengan kerentanan keamanan bernama CVE-2017-0144. Kerentanan ini ada di dalam implementasi protokol Server Message Block (SMB) di sistem operasi Microsoft Windows. SMB digunakan untuk berbagi file dan printer di jaringan, dan kelemahan ini memungkinkan penyerang untuk mengeksekusi kode arbitrer di sistem target tanpa otorisasi.
 
