@@ -154,8 +154,16 @@ sudo nmap -sV  —version-intensity 2 ip_address_target
   ```
 - Perintah sudo nmap --script auth ip_address_target -sS digunakan untuk melakukan pemindaian jaringan pada alamat IP tertentu dengan fokus pada deteksi otentikasi dan keamanan. Opsi -sS menunjukkan penggunaan pemindaian TCP SYN (half-open scan), sementara --script auth memaksa Nmap menggunakan skrip khusus untuk mengidentifikasi masalah otentikasi pada sistem target.
 
-<img width="974" alt="Screenshot 2023-12-21 at 16 51 13" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/726c79c1-9e3c-4a6d-9888-2de0a56379b9">
+  - <img width="550" alt="Screenshot 2023-12-21 at 16 51 13" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/726c79c1-9e3c-4a6d-9888-2de0a56379b9">
+  
 Pada alamat IP 192.168.1.4, Nmap menemukan bahwa kredensial tomcat:tomcat adalah valid dan dapat digunakan untuk mengakses server web Apache Tomcat.
+
+1. untuk mengakses server web Apache Tomcat masuk ke alamat contoh: `192.168.1.4:8081`
+  - <img width="450" alt="Screenshot 2023-12-24 at 02 23 24" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/37f5af59-a770-4bf0-9afa-f35268c02930">
+2. dan coba login menggunakan username: `tomcat` dan password: `tomcat`.
+  - <img width="450" alt="Screenshot 2023-12-24 at 02 28 13" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/07569465-5632-4532-baab-5ed03a5b734a">
+
+
 <br>
 <br>
   
@@ -163,7 +171,7 @@ Pada alamat IP 192.168.1.4, Nmap menemukan bahwa kredensial tomcat:tomcat adalah
   sudo nmap --script malware ip_address_target -sS
   ```
 - Perintah sudo nmap --script malware ip_address_target -sS digunakan untuk melakukan pemindaian jaringan pada alamat IP tertentu dengan fokus pada deteksi potensi malware.
-<img width="947" alt="Screenshot 2023-12-21 at 16 55 31" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/3bd1b010-cdd3-4f0a-ac25-7261ffcff751">
+ - <img width="550" alt="Screenshot 2023-12-21 at 16 55 31" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/3bd1b010-cdd3-4f0a-ac25-7261ffcff751">
 <br>
 <br>
 
@@ -172,7 +180,7 @@ Pada alamat IP 192.168.1.4, Nmap menemukan bahwa kredensial tomcat:tomcat adalah
   sudo nmap --script banner ip_address_target -sS
   ```
 - Perintah sudo nmap --script banner ip_address_target -sS digunakan untuk melakukan pemindaian jaringan pada alamat IP tertentu dengan fokus pada deteksi dan pengekspos banner atau informasi servis pada port tertentu.
-<img width="971" alt="Screenshot 2023-12-21 at 17 29 44" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/46786610-5ba4-41b8-9167-b85385e0a745">
+ - <img width="550" alt="Screenshot 2023-12-21 at 17 29 44" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/46786610-5ba4-41b8-9167-b85385e0a745">
 <br>
 <br>
 
@@ -189,7 +197,7 @@ Pada alamat IP 192.168.1.4, Nmap menemukan bahwa kredensial tomcat:tomcat adalah
   ```sh
   sudo nmap --script ftp-anon.nse ip_address -sS
   ```
-<img width="537" alt="Screenshot 2023-12-21 at 17 45 17" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/ac186912-f06e-4389-8ab4-ad51ef13d24f">
+   - <img width="537" alt="Screenshot 2023-12-21 at 17 45 17" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/ac186912-f06e-4389-8ab4-ad51ef13d24f">
 
 <br>
 
@@ -207,7 +215,7 @@ Pada alamat IP 192.168.1.4, Nmap menemukan bahwa kredensial tomcat:tomcat adalah
 8. Access Nessus: https://kali:8834/
 
 ### EXAMPLE :
-<img width="1400" alt="Screenshot 2023-12-22 at 14 14 49" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/8746ad5d-1e99-4be6-99af-2a36c6524153">
+- <img width="550" alt="Screenshot 2023-12-22 at 14 14 49" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/8746ad5d-1e99-4be6-99af-2a36c6524153">
 
 
 <br>
