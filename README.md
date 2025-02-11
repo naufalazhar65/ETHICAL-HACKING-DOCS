@@ -514,10 +514,15 @@ cd /usr/share/beef-xss/
 ./beef
 ```
 
+<img width="550" alt="Screenshot 2025-02-11 at 15 31 56" src="https://github.com/user-attachments/assets/174ef018-8622-416b-af33-d2b157f491cd" />
+
 Setelah BeEF berjalan, akses antarmukanya melalui browser dengan membuka:
 ```
 http://127.0.0.1:3000/ui/panel
 ```
+
+<img width="550" alt="Screenshot 2025-02-11 at 15 31 11" src="https://github.com/user-attachments/assets/2ed1ec2d-44ba-42f5-a0c9-9ad519fc2bde" />
+
 Login menggunakan kredensial default:
 - **Username:** beef
 - **Password:** beef
