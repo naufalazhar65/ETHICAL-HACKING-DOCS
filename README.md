@@ -1,3 +1,8 @@
+
+## Disclaimer: 
+**Dokumentasi ini hanya ditujukan untuk tujuan edukasi dan pengujian keamanan yang sah. Penggunaan alat atau teknik yang dijelaskan dalam dokumen ini tanpa izin eksplisit dari pemilik sistem adalah ilegal dan dapat melanggar hukum yang berlaku. Penulis tidak bertanggung jawab atas segala bentuk penyalahgunaan informasi dalam dokumen ini. Gunakan dengan etika dan tanggung jawab penuh.**
+
+================================================================================================
 ## Information Gathering Methods:
 
 ```sh
