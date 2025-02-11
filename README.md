@@ -489,6 +489,65 @@ Port 6667 adalah port yang umumnya digunakan untuk layanan Internet Relay Chat (
 11. dan untuk menjalankannya gunakan perintah `run`.
 
 
+<br>
+================================================================================================
+
+# BeEF (Browser Exploitation Framework)
+
+BeEF (Browser Exploitation Framework) adalah alat pengujian penetrasi yang berfokus pada eksploitasi browser web.
+
+## 📌 Instalasi
+BeEF tersedia di Kali Linux dan dapat diinstal dengan perintah berikut:
+```bash
+sudo apt update
+sudo apt install beef-xss
+```
+
+## 🚀 Cara Menjalankan BeEF
+Setelah instalasi, jalankan BeEF dengan perintah:
+```bash
+sudo beef-xss
+```
+Jika ada masalah dengan perintah di atas, coba jalankan secara manual:
+```bash
+cd /usr/share/beef-xss/
+./beef
+```
+
+Setelah BeEF berjalan, akses antarmukanya melalui browser dengan membuka:
+```
+http://127.0.0.1:3000/ui/panel
+```
+Login menggunakan kredensial default:
+- **Username:** beef
+- **Password:** beef
+
+## ⏹ Cara Menghentikan BeEF
+Jika BeEF berjalan di terminal, tekan **Ctrl + C** untuk menghentikannya.
+
+Jika berjalan di background, hentikan dengan:
+```bash
+sudo pkill -f beef
+```
+atau
+```bash
+sudo service beef-xss stop
+```
+
+## ❌ Cara Uninstall BeEF
+Jika ingin menghapus BeEF sepenuhnya, jalankan:
+```bash
+sudo apt remove --purge beef-xss
+sudo apt autoremove
+sudo apt clean
+```
+
+## 🔗 Referensi
+- [Official BeEF Documentation](https://beefproject.com/)
+- [Kali Linux Tools](https://www.kali.org/tools/beef/)
+
+---
+**Disclaimer:** Gunakan BeEF hanya untuk tujuan legal dan pengujian keamanan yang sah!
 
 
 
